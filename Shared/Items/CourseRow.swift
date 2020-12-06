@@ -28,6 +28,7 @@ struct CourseRow: View {
             }
             Spacer()
         }
+        .padding(.bottom,5)
         
     }
 }
