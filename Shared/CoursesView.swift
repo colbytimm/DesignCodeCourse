@@ -19,40 +19,59 @@ struct CoursesView: View {
             content
                 .navigationBarHidden(true)
             fullContent
-                .background(VisualEffectBlur().edgesIgnoringSafeArea(.all))
+                .background(VisualEffectBlur(blurStyle: .systemMaterial).edgesIgnoringSafeArea(.all))
             #else
             content
             fullContent
-                .background(VisualEffectBlur(blurStyle: .systemMaterial).edgesIgnoringSafeArea(.all))
+                .background(VisualEffectBlur().edgesIgnoringSafeArea(.all))
             #endif
         }
     }
     
     var content: some View {
         ScrollView() {
-            LazyVGrid(
-                columns: [GridItem(.adaptive(minimum: 160), spacing: 16)],
-                spacing: 16
-            ) {
-                ForEach(courses) { course in
-                    VStack {
-                        CourseItem(course: course)
-                            .matchedGeometryEffect(id: course.id, in: namespace, isSource: !show)
-                            .frame(height: 200)
-                            .onTapGesture {
-                                withAnimation(.spring(response: 0.5, dampingFraction: 0.7, blendDuration: 0)) {
-                                    show.toggle()
-                                    selectedItem = course
-                                    isDisabled = true
+            VStack(spacing: 0) {
+                Text("Courses")
+                    .font(.largeTitle)
+                    .bold()
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(16)
+                    .padding(.top, 54)
+                LazyVGrid(
+                    columns: [GridItem(.adaptive(minimum: 160), spacing: 16)],
+                    spacing: 16
+                ) {
+                    ForEach(courses) { course in
+                        VStack {
+                            CourseItem(course: course)
+                                .matchedGeometryEffect(id: course.id, in: namespace, isSource: !show)
+                                .frame(height: 200)
+                                .onTapGesture {
+                                    withAnimation(.spring(response: 0.5, dampingFraction: 0.7, blendDuration: 0)) {
+                                        show.toggle()
+                                        selectedItem = course
+                                        isDisabled = true
+                                    }
                                 }
-                            }
-                            .disabled(isDisabled)
+                                .disabled(isDisabled)
+                        }
+                        .matchedGeometryEffect(id: "containter\(course.id)", in: namespace, isSource: !show)
                     }
-                    .matchedGeometryEffect(id: "containter\(course.id)", in: namespace, isSource: !show)
+                }
+                .padding(16)
+                .frame(maxWidth: .infinity)
+                
+                Text("Latest sections")
+                    .fontWeight(.semibold)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding()
+                
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 240))]) {
+                    ForEach(courseSections) { item in
+                        CourseRow(item: item)
+                    }
                 }
             }
-            .padding(16)
-            .frame(maxWidth: .infinity)
         }
         .zIndex(1)
     }

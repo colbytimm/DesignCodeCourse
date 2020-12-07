@@ -45,6 +45,7 @@
 		A6C68B1B257DA0EB00FF90D0 /* GradientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C68B0D257DA0EB00FF90D0 /* GradientModel.swift */; };
 		A6C68B1F257DA2D600FF90D0 /* VisualEffectBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C68B1E257DA2D600FF90D0 /* VisualEffectBlur.swift */; };
 		A6C68B23257DA2E600FF90D0 /* VisualEffectBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C68B22257DA2E600FF90D0 /* VisualEffectBlur.swift */; };
+		A6C68B27257DA83D00FF90D0 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C68B26257DA83D00FF90D0 /* TabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 		A6C68B0D257DA0EB00FF90D0 /* GradientModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientModel.swift; sourceTree = "<group>"; };
 		A6C68B1E257DA2D600FF90D0 /* VisualEffectBlur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualEffectBlur.swift; sourceTree = "<group>"; };
 		A6C68B22257DA2E600FF90D0 /* VisualEffectBlur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualEffectBlur.swift; sourceTree = "<group>"; };
+		A6C68B26257DA83D00FF90D0 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				A6C68AB0257D689100FF90D0 /* ContentView.swift */,
+				A6C68B26257DA83D00FF90D0 /* TabBar.swift */,
 				A6C68ADC257D761700FF90D0 /* Sidebar.swift */,
 			);
 			path = Navigation;
@@ -279,6 +282,7 @@
 			files = (
 				A6C68AF4257D914E00FF90D0 /* Course.swift in Sources */,
 				A6C68B0E257DA0EB00FF90D0 /* LivestreamSection.swift in Sources */,
+				A6C68B27257DA83D00FF90D0 /* TabBar.swift in Sources */,
 				A6C68B12257DA0EB00FF90D0 /* Livestream.swift in Sources */,
 				A6C68B14257DA0EB00FF90D0 /* TutorialSection.swift in Sources */,
 				A6C68B18257DA0EB00FF90D0 /* CourseSection.swift in Sources */,
